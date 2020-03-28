@@ -1,0 +1,42 @@
+.dragdealer {
+    cursor: row-resize;
+    position: relative;
+    overflow: hidden;
+    height: 3px;
+    background: lightgrey;
+}
+
+.text-style {
+    white-space: nowrap;
+    font-family: Calibri;
+    font-size: 12px;
+    size: 50px;
+}
+
+.elemOnlyHor {
+    overflow: auto;
+    overflow-y: hidden;
+    user-select: auto;
+    display: flow;
+    resize: vertical;
+}
+
+.elemOnlyVer {
+    overflow: auto;
+    overflow-y: hidden;
+    user-select: auto;
+    display: flow;
+    resize: horizontal;
+}
+
+.hrStyleVer{
+    cursor: row-resize;
+    user-select: auto;
+    display: flex;
+    resize: both;
+}
+
+.maxSize {
+
+}
+
