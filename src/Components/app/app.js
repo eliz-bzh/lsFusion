@@ -3,6 +3,7 @@ import './app.css';
 import Header from '../header/header';
 import MenuBar from "../menu-bar/menu-bar";
 import {desktop, directories} from "../menu-bar-lists";
+import Columns from "../columns/columns";
 
 
 const App=()=>{
@@ -13,9 +14,8 @@ const App=()=>{
                 <Header/>
             </div>
             <hr className="hrStyleVer"/>
-            <div>
-                <MenuBar arr={desktop}/>
-            </div>
+            <Columns left={<MenuBar arr={desktop}/>}
+                     right={<MenuBar arr={directories}/>}/>
         </div>
     );
 };
