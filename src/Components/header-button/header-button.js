@@ -7,20 +7,8 @@ export default class HeaderButton extends Component{
     constructor(props) {
         super(props);
         this.state = {
-            label: null,
-            image: null,
-            list: null,
             show: false
         }
-    }
-
-    componentDidMount() {
-        this.updateItem();
-    }
-
-    updateItem(){
-        const {getData, getImageUrl, getList} = this.props;
-        this.setState({label: getData, image: getImageUrl, list: getList});
     }
 
     onClicked=()=>{
@@ -31,18 +19,21 @@ export default class HeaderButton extends Component{
 
     render() {
 
-        const {label, image, list, show} = this.state;
+        const {show} = this.state;
+        const {data} = this.props;
         return(
-            <div>
-                <button className="buttonStyle" onClick={this.onClicked}>
-                    <img src={image} alt="errorImage"/>
-                    <p>{label}</p>
-                </button>
-                {show ? <MenuBar arr={list}/> : null}
+            <div className="btn-group">
+                {
+                    data.map(el => (
+                        <div>
+                            <button className="buttonStyle" onClick={this.onClicked}>
+                                <img src={require(`./../ImageResources/${el.img}`)} alt="errorImage"/>
+                                <p>{el.data}</p>
+                            </button>
+                            {show ? <MenuBar arr={el.list}/> : null}
+                        </div>
+                    ))}
             </div>
         );
     }
 }
-
-//41
-//{show ? <MenuBar arr={list}/> : null}

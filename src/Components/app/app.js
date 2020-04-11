@@ -1,9 +1,9 @@
 import React from 'react';
 import './app.css';
-import Header from '../header/header';
 import MenuBar from "../menu-bar/menu-bar";
-import {desktop, directories} from "../menu-bar-lists";
+import {desktop, directories, headerButtons} from "../menu-bar-lists";
 import Columns from "../columns/columns";
+import HeaderButton from "../header-button/header-button";
 
 
 const App=()=>{
@@ -11,7 +11,7 @@ const App=()=>{
     return(
         <div className="text-style">
             <div className="horizontalToolbar elemOnlyHor">
-                <Header/>
+                <HeaderButton data={headerButtons}/>
             </div>
             <hr className="hrStyleVer"/>
             <Columns left={<MenuBar arr={desktop}/>}
