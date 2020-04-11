@@ -1,8 +1,8 @@
 import React, {Component} from "react";
-import './header-button.css';
+import './header.css';
 import MenuBar from "../menu-bar/menu-bar";
 
-export default class HeaderButton extends Component{
+export default class Header extends Component{
 
     constructor(props) {
         super(props);
@@ -30,7 +30,6 @@ export default class HeaderButton extends Component{
                                 <img src={require(`./../ImageResources/${el.img}`)} alt="errorImage"/>
                                 <p>{el.data}</p>
                             </button>
-                            {show ? <MenuBar arr={el.list}/> : null}
                         </div>
                     ))}
             </div>

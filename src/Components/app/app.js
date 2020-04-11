@@ -3,7 +3,7 @@ import './app.css';
 import MenuBar from "../menu-bar/menu-bar";
 import {desktop, directories, headerButtons} from "../menu-bar-lists";
 import Columns from "../columns/columns";
-import HeaderButton from "../header-button/header-button";
+import Header from "../header/header";
 
 
 const App=()=>{
@@ -11,7 +11,7 @@ const App=()=>{
     return(
         <div className="text-style">
             <div className="horizontalToolbar elemOnlyHor">
-                <HeaderButton data={headerButtons}/>
+                <Header data={headerButtons}/>
             </div>
             <hr className="hrStyleVer"/>
             <Columns left={<MenuBar arr={desktop}/>}
